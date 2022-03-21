@@ -1,0 +1,22 @@
+{
+  "name": "project_04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/payelgayen/Project_04.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/payelgayen/Project_04/issues"
+  },
+  "homepage": "https://github.com/payelgayen/Project_04#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
