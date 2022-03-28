@@ -1,0 +1,33 @@
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <div class="center">
+            <h1>Sign up</h1>
+            <form method="post">
+                <div class="text_field">
+                    <input type="text" name="firstname" required />
+                    <label>First Name</label>
+                </div>
+                <div class="text_field">
+                    <input type="text" name="lastname" required />
+                    <label>Last Name</label>
+                </div>
+                <div class="text_field">
+                    <input type="text" name="email" required />
+                    <label>Email Id</label>
+                </div>
+                <div class="text_field">
+                    <input type="password" name="password" required />
+                    <label>Password</label>
+                </div>
+                <div class="text_field">
+                    <input type="password" name="confirmPassword" required />
+                    <label>Confirm Password</label>
+                </div>
+                <input type="submit" value="Submit" />
+                <div class="signup_link"></div>
+            </form>
+        </div>
+    </body>
+
+    </html>

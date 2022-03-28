@@ -4,7 +4,12 @@
   "description": "",
   "main": "Index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create_db": "psql -U postgres -f sql/create_db.sql",
+    "create_tables": "psql -U postgres -d project4 -f sql/create_tables.sql",
+    "insert_data": "psql -U postgres -d project4 -f sql/insert_data.sql",
+    "setup_db": "npm run create_db && npm run create_tables && npm run insert_data",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,13 @@
   },
   "homepage": "https://github.com/payelgayen/Project_04#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "pg-promise": "^10.11.1",
+    "uuid": "^8.3.2"
   }
 }
