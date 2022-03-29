@@ -4,12 +4,13 @@
   "description": "",
   "main": "Index.js",
   "scripts": {
+    "dev": "nodemon Index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "create_db": "psql -U postgres -f sql/create_db.sql",
     "create_tables": "psql -U postgres -d project4 -f sql/create_tables.sql",
     "insert_data": "psql -U postgres -d project4 -f sql/insert_data.sql",
     "setup_db": "npm run create_db && npm run create_tables && npm run insert_data",
-    "start": "nodemon index.js"
+    "start": "node Index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
     "pg-promise": "^10.11.1",
     "uuid": "^8.3.2"
   }
