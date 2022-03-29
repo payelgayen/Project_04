@@ -1,12 +1,54 @@
+/* /header */
+
+.header {
+  width: 100%;
+  background-color: #6D7B89;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header_logo{
+  height: 60px;
+  padding: 10px 20px
+}
+.navigation {
+ height: 100%;
+ color: #F5F5F5;
+ padding: 3%;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  padding: 30px;
+ 
+ }
+
+ .navigation a:hover {
+  color: rgb(81, 88, 90);
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: "roboto", sans-serif;
-  background: linear-gradient(120deg, #c4cace, #6a7b8b);
   height: 100vh;
   overflow: hidden;
 }
 
+
+/* home*/
+.part1 {
+  margin: 5%;
+  text-align: center;
+}
+.main_logo {
+  width: 20%;
+  align-items: center;
+
+}
 .center {
   position: absolute;
   top: 50%;
@@ -125,4 +167,18 @@ input[type="submit"]:hover {
 
 .signup_link a:hover {
   text-decoration: underline;
+}
+
+
+/* footer*/
+
+.footer{
+  margin: 5%;
+  margin-left: auto;
+margin-right: auto;
+background-color: #a9adb1;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
 }
