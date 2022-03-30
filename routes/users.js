@@ -23,3 +23,5 @@ router.get('/users', protectedRoute, (req, res) => {
       res.redirect('/error?message=' + error.message);
     });
 });
+
+module.exports = router;
