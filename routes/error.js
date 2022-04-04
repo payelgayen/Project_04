@@ -3,7 +3,7 @@ const router = express.Router();
 
 // GET home page
 router.get("*", (req, res) => {
-  res.render("pages/error", { title: "404", error: "404" });
+  res.render("pages/error", { title: "404", error: "404", req: req, res: res });
 });
 
 module.exports = router;

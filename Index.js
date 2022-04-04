@@ -33,9 +33,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-//LogingMiddeare
-app.use(morgan("dev"));
-
 //ejs config
 app.set("view engine", "ejs"); // sets ejs as view engine
 app.set("views", "./views"); // sets 'views' folder as teh folder for grabbing templates when res.rendering
@@ -54,11 +51,14 @@ app.use("/signup", signupRouter);
 const loginRouter = require("./routes/login.js");
 app.use("/login", loginRouter);
 
+const logoutRouter = require("./routes/logout.js");
+app.use("/logout", logoutRouter);
+
 // const postsRouter = require("./routes/posts.js");
 // app.use("/posts", postsRouter);
 
-// const errorRouter = require("./routes/error.js");
-// app.use("*", errorRouter);
+const errorRouter = require("./routes/error.js");
+app.use("*", errorRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}`);

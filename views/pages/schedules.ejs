@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="application.css" />
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <%- include('../partials/header.ejs') %>
+    <h1>All schedules</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Day</th>
+          <th>Start At</th>
+          <th>End At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let index=0; index < schedules.length; index++) { %>
+
+          <tr>
+            <td>
+              <a href="user/<%= schedules[index].user_id %>">
+                <%= schedules[index].firstname %>
+                  <%= schedules[index].lastname %>
+              </a>
+            </td>
+            <td>
+              <%= schedules[index].day %>
+            </td>
+            <td>
+              <%= schedules[index].start_time %>
+            </td>
+            <td>
+              <%= schedules[index].end_time %>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+    <p></p>
+    <div>
+      <input type="submit" id="clickAddSchedule" value="Add Schedule" />
+    </div>
+    <form class="input-users" id="input-schedules" action="/schedule" method="POST" onsubmit="submitSchedules()">
+      <h1>Add Schedule</h1>
+      <div>
+        <label>Select User Id *</label>
+        <select name="user_id" required>
+          <% for(let index=0; index < allusers.length; index++) { %>
+            <option value="<%= allusers[index].id %>">
+              <%= allusers[index].firstname %>
+                <%= allusers[index].lastname %>
+            </option>
+            <% } %>
+        </select>
+      </div>
+      <div>
+        <label>Select a Day *</label>
+        <select name="day" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+      </div>
+      <div>
+        <label>Start Time *</label>
+        <select name="start_at" required>
+          <option value="00:00">12AM</option>
+          <option value="01:00">1AM</option>
+          <option value="02:00">2AM</option>
+          <option value="03:00">3AM</option>
+          <option value="04:00">4AM</option>
+          <option value="05:00">5AM</option>
+          <option value="06:00">6AM</option>
+          <option value="07:00">7AM</option>
+          <option value="08:00">8AM</option>
+          <option value="09:00">9AM</option>
+          <option value="10:00">10AM</option>
+          <option value="11:00">11AM</option>
+          <option value="12:00">12PM</option>
+          <option value="13:00">1PM</option>
+          <option value="14:00">2PM</option>
+          <option value="15:00">3PM</option>
+          <option value="16:00">4PM</option>
+          <option value="17:00">5PM</option>
+          <option value="18:00">6PM</option>
+          <option value="19:00">7PM</option>
+          <option value="20:00">8PM</option>
+          <option value="21:00">9PM</option>
+          <option value="22:00">10PM</option>
+          <option value="23:00">11PM</option>
+        </select>
+      </div>
+      <div>
+        <label>End Time *</label>
+        <select name="end_at" required>
+          <option value="00:00">12AM</option>
+          <option value="01:00">1AM</option>
+          <option value="02:00">2AM</option>
+          <option value="03:00">3AM</option>
+          <option value="04:00">4AM</option>
+          <option value="05:00">5AM</option>
+          <option value="06:00">6AM</option>
+          <option value="07:00">7AM</option>
+          <option value="08:00">8AM</option>
+          <option value="09:00">9AM</option>
+          <option value="10:00">10AM</option>
+          <option value="11:00">11AM</option>
+          <option value="12:00">12PM</option>
+          <option value="13:00">1PM</option>
+          <option value="14:00">2PM</option>
+          <option value="15:00">3PM</option>
+          <option value="16:00">4PM</option>
+          <option value="17:00">5PM</option>
+          <option value="18:00">6PM</option>
+          <option value="19:00">7PM</option>
+          <option value="20:00">8PM</option>
+          <option value="21:00">9PM</option>
+          <option value="22:00">10PM</option>
+          <option value="23:00">11PM</option>
+        </select>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+    <%- include('../partials/footer.ejs') %>
+      <script>
+        const footerclass = document.querySelector("footer");
+        footerclass.className = "absolutefooter";
+        function changeDisplay() {
+          document.getElementById("input-schedules").style.display = "block";
+          document.getElementById("clickAddSchedule").style.display = "none";
+          footerclass.className = "absolutefooter";
+        }
+
+        function submitSchedules() {
+          document.getElementById("input-schedules").style.display = "none";
+          document.getElementById("clickAddSchedule").style.display = "block";
+          footerclass.className = "absolutefooter";
+        }
+
+        document
+          .getElementById("clickAddSchedule")
+          .addEventListener("click", changeDisplay);
+      </script>
+</body>
+
+</html>
