@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"  type= "text/css" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <title>Schedule</title>
+  </head>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <h1 class="individual">
+      User Schedule
+         </h1>
+    <table class="scheduletable">
+      <thead>
+        <tr id="tablefirstpart">
+          <th>User ID</th>
+          <th>Day</th>
+          <th>Start at</th>
+          <th>End at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <% for( let index = 0; index < userschedule.length; index++ ) { %>
+            <tr>
+            <td><%= userschedule[index].userid %></td>
+            <td><%= userschedule[index].day %></td>
+            <td><%= userschedule[index].start_at %></td>
+            <td><%= userschedule[index].end_at %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </tbody>
+    </table>
+
+    <div class="part2">
+      <p>Dear user take into count the colum Day the following terms</p>
+      
+      <ol>Day 1: Monday</ol>
+      <ol>Day 2: Tuesday</ol>
+      <ol>Day 3: Wednesday</ol>
+      <ol>Day 4: Thursday</ol>
+      <ol>Day 5: Friday</ol>
+      <ol>Day 6: Saturday</ol>
+      <ol>Day 6: Sunday<ol>
+      </div>
+  </body>
+</html>
