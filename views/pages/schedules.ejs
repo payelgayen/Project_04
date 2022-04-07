@@ -13,8 +13,8 @@
 
 <body>
   <%- include('../partials/header.ejs') %>
-    <h1>All schedules</h1>
-       <table>
+    <h1 class="title">All schedules</h1>
+       <table class="scheduletable">
       <thead>
         <tr>
           <th>User Name</th>
@@ -46,14 +46,15 @@
       </tbody>
     </table>
     <p></p>
-    <div>
+    <div class="title">
       <input type="submit" id="clickAddSchedule" value="Add Schedule" />
     </div>
     <form class="input-users" id="input-schedules" action="/schedule" method="POST" onsubmit="submitSchedules()">
-      <h1>Add Schedule</h1>
+      <h1 class="titletwo">Add Schedule</h1>
+      <div class="add">
       <div>
         <label>Select User Id *</label>
-        <select name="user_id" required>
+        <select name="user_id" required class="input">
           <% for(let index=0; index < allusers.length; index++) { %>
             <option value="<%= allusers[index].id %>">
               <%= allusers[index].firstname %>
@@ -64,7 +65,7 @@
       </div>
       <div>
         <label>Select a Day *</label>
-        <select name="day" required>
+        <select name="day" required class="input">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -76,7 +77,7 @@
       </div>
       <div>
         <label>Start Time *</label>
-        <select name="start_at" required>
+        <select name="start_at" required class="input">
           <option value="00:00">12AM</option>
           <option value="01:00">1AM</option>
           <option value="02:00">2AM</option>
@@ -105,7 +106,7 @@
       </div>
       <div>
         <label>End Time *</label>
-        <select name="end_at" required>
+        <select name="end_at" required class="input">
           <option value="00:00">12AM</option>
           <option value="01:00">1AM</option>
           <option value="02:00">2AM</option>
@@ -133,7 +134,11 @@
         </select>
       </div>
       <input type="submit" value="Submit" />
+    </div>
     </form>
+<br>
+</body>
+
     <%- include('../partials/footer.ejs') %>
       <script>
         const footerclass = document.querySelector("footer");
@@ -154,6 +159,6 @@
           .getElementById("clickAddSchedule")
           .addEventListener("click", changeDisplay);
       </script>
-</body>
+
 
 </html>

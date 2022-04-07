@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../../public/application.css" />
+  <link rel="stylesheet" href="/application.css" />
   <title>
     <%= title %>
   </title>
@@ -32,8 +32,8 @@
             <tr>
             <td><%= userschedule[index].user_id %></td>
             <td><%= userschedule[index].day %></td>
-            <td><%= userschedule[index].start_at %></td>
-            <td><%= userschedule[index].end_at %></td>
+            <td><%= userschedule[index].start_time %></td>
+            <td><%= userschedule[index].end_time %></td>
           </tr>
           <% } %>
         </tbody>

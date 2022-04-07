@@ -26,7 +26,7 @@ router.get("/:userid/schedules", protectedRoute, (req, res) => {
   db.any("SELECT * FROM schedule")
     .then((schedule) => {
         const id = req.params.userid;
-        const userschedule = schedule.filter((x) => x.user_id === parseInt(id));
+        const userschedule = schedule.filter((x) => x.user_id === id)
 console.log(userschedule)
       res.render("pages/userSchedule", {
         userschedule,

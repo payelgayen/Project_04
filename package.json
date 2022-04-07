@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "nodemon Index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon Index.js",
     "create_db": "psql -U postgres -f sql/create_db.sql",
     "create_tables": "psql -U postgres -d project4 -f sql/create_tables.sql",
     "insert_data": "psql -U postgres -d project4 -f sql/insert_data.sql",
