@@ -19,6 +19,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>User ID</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Created At</th>
@@ -28,6 +29,9 @@
                     <% if(users.length> 0) { %>
                         <% users.forEach(user=> { %>
                             <tr>
+                                <td>
+                                    <%= user.id%>
+                                </td>
                                 <td>
                                     <%= user.firstname%>
                                         <%= user.lastname%>
@@ -39,7 +43,7 @@
                                     <%= user.created%>
                                 </td>
                             </tr>
-                            </tr>
+                            
                             <% }) %>
                                 <% } %>
                 </tbody>

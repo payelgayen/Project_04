@@ -14,7 +14,7 @@
 <body>
   <%- include('../partials/header.ejs') %>
     <h1>All schedules</h1>
-    <table>
+       <table>
       <thead>
         <tr>
           <th>User Name</th>
@@ -25,10 +25,9 @@
       </thead>
       <tbody>
         <% for(let index=0; index < schedules.length; index++) { %>
-
           <tr>
             <td>
-              <a href="user/<%= schedules[index].user_id %>">
+              <a href="users/<%= schedules[index].user_id %>/schedules">
                 <%= schedules[index].firstname %>
                   <%= schedules[index].lastname %>
               </a>

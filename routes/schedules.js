@@ -5,24 +5,30 @@ const router = express.Router();
 
 const { protectedRoute } = require("../middleware/protected");
 
-router.get("/", protectedRoute, (req, res) => {
-  db.any("SELECT * FROM schedule")
-    .then((schedule) => {
-        const id = req.params.userid;
-        const userschedule = schedules.filter((x) => x.userid === parseInt(id));
 
-      res.render("pages/userSchedule", {
-        userschedule,
-        title: "Schedules",
+router.get('/', protectedRoute, (req, res) => {
+  // pg-promise
+  db.any('SELECT * FROM schedule')
+    .then((schedules) => {
+      // if success;
+      console.log(schedules);
+
+      res.render('pages/schedules', { 
+        schedules, 
+        title: 'ALL schedules',
         footerclass: "absolutefooter",
         req: req,
-        res: res,
-      });
+        res: res });
     })
     .catch((error) => {
-      res.redirect("/error?message=" + error.message);
+      // error;
+      console.log(error);
+      res.redirect('/error?message=' + error.message);
     });
 });
+
+
+
 
 module.exports = router;
 

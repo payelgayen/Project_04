@@ -45,6 +45,9 @@ app.use("/", homeRouter);
 const usersRouter = require("./routes/users.js");
 app.use("/users", usersRouter);
 
+const schedulesRouter = require("./routes/schedules.js");
+app.use("/schedules", schedulesRouter);
+
 const signupRouter = require("./routes/signup.js");
 app.use("/signup", signupRouter);
 

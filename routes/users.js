@@ -21,4 +21,23 @@ router.get("/", protectedRoute, (req, res) => {
     });
 });
 
+
+router.get("/:userid/schedules", protectedRoute, (req, res) => {
+  db.any("SELECT * FROM schedule")
+    .then((schedule) => {
+        const id = req.params.userid;
+        const userschedule = schedule.filter((x) => x.user_id === parseInt(id));
+console.log(userschedule)
+      res.render("pages/userSchedule", {
+        userschedule,
+        title: "Schedules",
+        footerclass: "absolutefooter",
+        req: req,
+        res: res,
+      });
+    })
+    .catch((error) => {
+      res.redirect("/error?message=" + error.message);
+    });
+});
 module.exports = router;
