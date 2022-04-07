@@ -47,6 +47,9 @@ background-color: #bdd0dd;
 border: none;
 
 }
+.part2{
+  margin: 5%;
+}
 
 .navbar {
   display: flex;
